@@ -13,6 +13,24 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  const topicsArray = Array.from(topics);
+
+  let divTopics = document.createElement('div');
+    divTopics.classList.add('topics');
+  
+  function tabCreator(text){
+    let divTab = document.createElement('div');
+      divTab.classList.add('tab');
+      divTab.textContent = text;
+    return divTab;
+  };
+
+  for(let i = 0; i < topicsArray.length; i++){
+    let divTab = tabCreator(topicsArray[i]);
+    divTopics.appendChild(divTab);
+  };
+
+  return divTopics;
 }
 
 const tabsAppender = (selector) => {
